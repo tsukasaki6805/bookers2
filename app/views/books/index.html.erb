@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+      <%= render'users/userinfo', user: current_user %>
+　　　<%= render 'books/form', book: @book %>
+　　</div>
+　　<div class="col-xs-9">
+      <table class="table">
+        <h1>Books</h1>
+        <tread>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+          </tr>
+        </thead>
+        <tbody>
+         <% @books.each do |book| %>
+          <%= link_to book_path(book.id) do %>
+          <% end %>
+　　　　　<tr>
+          <td>
+            <%= link_to(user_path(book.user), class: 'list-content') do %>
+            <%= attachment_image_tag book.user, :profile_image, size: "50x50", format: 'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
+            <% end %>
+          </td>
+          <td><%= link_to book.title, book_path(book.id) %></td>
+          <td><%= book.body %></td>
+          <td><%#= link_to 'Show', book %></td>
+          <td><%#= link_to 'Edit', edit_book_path(book) %></td>
+          <td><%#= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?'} %></tb>
+          </tr>
+         <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
