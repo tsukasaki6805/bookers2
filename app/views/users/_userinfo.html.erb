@@ -1,7 +1,7 @@
 <% current_user.id == user.id %>
   <div class="row">
     <h1>User info</h1>
-    <%= attachment_image_tag user, :profile_image_id, :fill, 60, 60, format:'jpeg', class:"pull-left profile-img", fallback:"no_image.jpg" %>
+    <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format:'jpeg', class:"pull-left profile-img", fallback:"no_image.jpg" %>
     <table class="table">
       <tr>
         <th>name</th>
@@ -16,4 +16,5 @@
       <%= link_to "", edit_user_path(user), class:"btn btn-outline-secondary btn-block fas fa-user-cog" %>
      </div>
   </div>
+
 

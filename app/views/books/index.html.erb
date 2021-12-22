@@ -21,7 +21,7 @@
 　　　　　<tr>
           <td>
             <%= link_to(user_path(book.user), class: 'list-content') do %>
-            <%= attachment_image_tag book.user, :profile_image_id, size: "50x50", format: 'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
+            <%= attachment_image_tag book.user, :profile_image, size: "50x50", format: 'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
             <% end %>
           </td>
           <td><%= link_to book.title, book_path(book.id) %></td>
